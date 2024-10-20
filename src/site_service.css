@@ -1,0 +1,129 @@
+.service1, .service2, .service3, .service4 {
+    height: 650px;
+    width: 96%;
+    /* background-color: rgb(233, 234, 237); */
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+
+}
+
+.service-child {
+    width: 48%;
+    height: 98%;
+    /* background-color: azure; */
+}
+
+.service-title {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.service-text-content {
+    text-align: center;
+    line-height: 40px;
+    /* margin-top: 22%; */
+    font-size: 22px;
+    padding: 38px;
+
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.leave_a_message {
+    width: 64px;
+    height: 64px;
+    background-color: rgb(4, 2, 15);
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    color: #fff;
+}
+.leave_a_message:hover{
+    cursor: pointer;
+    opacity: .6;
+}
+
+.message_form {
+    width: 300px;
+    height: 400px;
+    background-color: rgb(4, 2, 15);
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 75px;
+    margin-right: 35px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.close_message_section {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-left: 5px;
+    margin-top: 5px;
+    height: 37px;
+    width: 37px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 0px;
+}
+
+.msg_input {
+    width: 250px;
+    height: 37px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.form_validation {
+    width: 180px;
+    height: 48px;
+    position: relative;
+    margin-left: 40px;
+    border-radius: 6px;
+
+}
+
+.b-none {
+    display: none;
+}
+
+.video_main_zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.w3-padding-32, .w3-padding-16, .w3-padding-large, .w3-grey, .w3-dark-grey, .w3-padding-24 {
+    display: none;
+}
+
+.logo_name {
+    font-size: 30px;
+}
