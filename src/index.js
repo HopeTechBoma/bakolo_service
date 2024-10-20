@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './w3.css';
+import './nav_site.css';
+import './site_header.css';
+import './site_footer.css';
+import './site_service.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

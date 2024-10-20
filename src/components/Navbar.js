@@ -1,19 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-light p-3 d-flex justify-content-between">
-      <div>
-        <span>16h30 min Libreville</span>
-        <span className="ml-3">BIENVENUE SUR ???.COM</span>
+
+    <nav class="nav">
+      <div class="container">
+      <Link to="/" class="logo_name">Bakolo</Link>
+        <ul>
+          <li><Link to="/">Acceuil</Link></li>
+          <li><Link to="/main_back">Video Shop</Link></li>
+          <li><Link to="/carte_visite">Carte De Visite</Link></li>
+          <li><Link to="/presentations">Présentations</Link></li>
+          <li><Link to="/flyerfairepart">Flyers & Faire Part</Link></li>
+          <li><Link to="/siteweb">Site Web</Link></li>
+          {/* <li><Link to="/traitement_textes">Traitement de Texte</Link></li> */}
+          {/* <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li> */}
+        </ul>
       </div>
-      <div>
-        <button className="btn btn-outline-primary">Nos Formations</button>
-        <button className="btn btn-outline-primary">Nos Applications</button>
-        <button className="btn btn-outline-primary">Compte</button>
-        <button className="btn btn-outline-primary">Nos Services</button>
-      </div>
-    </div>
+    </nav>
   );
 };
 
