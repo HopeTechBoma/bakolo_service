@@ -13,6 +13,7 @@ import FlyerFairePart from './pages/site_pages/FlyerFairePart';
 import Presentations from './pages/site_pages/Presentations';
 import SiteWeb from './pages/site_pages/SiteWeb';
 import TraitementDeText from './pages/site_pages/TraitementDeText';
+import AddProductForm from './pages/backend/AddProductForm';
 // Import other pages as needed
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/presentations" element={<Presentations />} />
           <Route path="/siteweb" element={<SiteWeb />} />
           <Route path="/traitement_textes" element={<TraitementDeText />} />
+          <Route path='/add_product' element={<AddProductForm />} />
           {/* Add other routes here as needed */}
         </Routes>
       </div>
