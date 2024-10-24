@@ -19,3 +19,13 @@ code {
 .d-flex {
   background-color: brown;
 }
+
+.transition_element {
+  height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+
+}
