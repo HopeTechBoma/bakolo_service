@@ -11,10 +11,12 @@ function Transition2(props) {
 
   // Render the component
   return (
-    <div className='transition_element'>
+    <div className='transition2 transition_element'>
+      <div className='transition2_content'>
       <h1>{props.title}</h1>
       <p>This is a simple React component.</p>
       <button onClick={handleClick}>Click me</button>
+      </div>
     </div>
   );
 }

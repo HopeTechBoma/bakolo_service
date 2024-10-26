@@ -20,7 +20,7 @@ const SitePage = () => {
     <div>
         <SiteHeader />
         <Service1 />
-        <Transition1 title="Transition1" />
+        <Transition1 title="REVOLUTIONONS" />
         <Service2 />
         <Transition2 title="Transition2" />
         <Service3 />
