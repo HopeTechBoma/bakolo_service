@@ -145,10 +145,7 @@
 }
 
 .video_main_zone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 60px;
+    /* padding-top: 67px; */
 }
 
 .w3-padding-32, .w3-padding-16, .w3-padding-large, .w3-grey, .w3-dark-grey, .w3-padding-24 {
@@ -371,4 +368,79 @@ path {
     height: 100%;
     object-fit: cover;
     /* transform: translate(-50%, -50%); */
+}
+
+.test_class {
+  /* background-color: red; */
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video_banier_section {
+  height: 450px;
+  width: 100%;
+/* background-color: #b80000; */
+/* display: flex;
+align-items: center;
+justify-content: center; */
+}
+
+.video_page_bg {
+  position: relative;
+
+  
+}
+
+.t2_control {
+  /* background-color: #742525;
+  
+  background-image: url('../public/images/services/montage_video.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+}
+
+.presentation_header_bg {
+  background-color: #742525;
+  background-image: url('../public/images/preao-logiciel-presentation-diaporama.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.flyers_header_bg {
+  background-color: #742525;
+  background-image: url('../public/images/Professional-Web-Banner-AD-in-Photoshop-scaled.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.website_header_bg {
+  background-color: #742525;
+  background-image: url('../public/images/10-conseils-creation-site-internet-efficace.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.textedit_header_bg {
+  background-color: #742525;
+  background-image: url('../public/images/memoire_photo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.carte_visit_header_bg {
+  background-color: #742525;
+  background-image: url('../public/images/businesscards-carrousel1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.video-bg {
+ background-color: rgba(0, 0, 0, 0.5);
 }
