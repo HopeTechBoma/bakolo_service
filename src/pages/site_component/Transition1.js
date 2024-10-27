@@ -11,7 +11,7 @@ function Transition1(props) {
 
   // Render the component
   return (
-    <div className='section7 transition_element'>
+    <div className='section7 transition_element t2_control'>
       
       <div className='video-bg'>
         <div className='vid_text_section'>

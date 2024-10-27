@@ -26,6 +26,10 @@ code {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: beige;
+    /* background-color: beige; */
 
+}
+
+.t2_control {
+  margin-bottom: 150px;
 }

@@ -11,7 +11,7 @@ function Transition3(props) {
 
   // Render the component
   return (
-    <div className='transition_element'>
+    <div className='transition_element curved_transition'>
      <div class="section4">
 
 <section class="section_trans1">
