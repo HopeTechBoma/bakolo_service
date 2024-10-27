@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.8472ba95.css",
+    "main.css": "/static/css/main.b728ae3e.css",
     "main.js": "/static/js/main.c57c673f.js",
     "static/js/453.ea3d20f5.chunk.js": "/static/js/453.ea3d20f5.chunk.js",
     "static/media/Professional-Web-Banner-AD-in-Photoshop-scaled.jpg": "/static/media/Professional-Web-Banner-AD-in-Photoshop-scaled.5b03be50f617659e0f31.jpg",
@@ -10,12 +10,12 @@
     "static/media/10-conseils-creation-site-internet-efficace.jpg": "/static/media/10-conseils-creation-site-internet-efficace.ad7252ed2256adaee978.jpg",
     "static/media/montage_video.jpg": "/static/media/montage_video.43bed3afe6ebfc468b0d.jpg",
     "index.html": "/index.html",
-    "main.8472ba95.css.map": "/static/css/main.8472ba95.css.map",
+    "main.b728ae3e.css.map": "/static/css/main.b728ae3e.css.map",
     "main.c57c673f.js.map": "/static/js/main.c57c673f.js.map",
     "453.ea3d20f5.chunk.js.map": "/static/js/453.ea3d20f5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8472ba95.css",
+    "static/css/main.b728ae3e.css",
     "static/js/main.c57c673f.js"
   ]
 }
