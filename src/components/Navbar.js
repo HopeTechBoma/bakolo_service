@@ -17,6 +17,9 @@ const Navbar = () => {
           <li><Link to="/traitement_textes">Traitement de Texte</Link></li>
 
         </ul>
+        <div className='hidden_menu_icon'>
+        <i class="fab fa-telegram-plane"></i>
+        </div>
       </div>
     </nav>
   );
