@@ -34,3 +34,13 @@ code {
   margin-bottom: 150px;
   margin-top: 67px;
 }
+
+.service_description {
+  color: gray;
+  font-size: 12px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fffbfb;
+}

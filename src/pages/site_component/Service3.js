@@ -11,25 +11,65 @@ const Service3 = () => {
         <div class="service-title"><h2>Site Webs</h2></div>
         <div className='back_service_overview'>
           <p>
-          Complete protection
-Each Kaspersky plan uses cutting-edge AI technology to detect and stop any type of online threat – even ones that haven’t been seen before. So every time you connect to the internet, we:
-Protect your privacy by blocking unauthorized attempts to access your webcam or track your activity on websites.
-Secure your payments
+          Ici, nous vous proposons de transformer votre vision en réalité numérique, 
+          en créant un site web sur mesure qui répondra à vos besoins et à vos objectifs
           </p>
         </div>
             
             <div class="service-text-content">
             <ul>
-              <li>Complete protection
-Each Kaspersky plan uses cutting-edge AI technology</li>
-<li>Complete protection
-Each Kaspersky plan uses cutting-edge AI technology</li>
-<li>Complete protection
-Each Kaspersky plan uses cutting-edge AI technology</li>
-<li>Complete protection
-Each Kaspersky plan uses cutting-edge AI technology</li>
-<li>Complete protection
-Each Kaspersky plan uses cutting-edge AI technology</li>
+              <li>Sites vitrines
+              <div className='service_description'>
+              <ul>
+                <li>
+                Présentation de l'entreprise : 
+                Idéal pour les entreprises qui souhaitent présenter leurs produits, services, équipe et valeurs.
+                </li>
+              </ul>
+              </div>
+              </li>
+
+              <li>Sites e-commerce
+              <div className='service_description'>
+              <ul>
+                <li>
+                Vente en ligne : Permet de vendre des produits ou des services directement en ligne.
+                </li>
+
+              </ul>
+              </div>
+              </li>
+
+              <li>Blogs
+              <div className='service_description'>
+              <ul>
+                <li>
+                Partage de contenu : Permet de partager des articles, des actualités, des conseils sur un sujet donné.
+                </li>
+              </ul>
+              </div>
+              </li>
+
+              <li>Portfolios
+              <div className='service_description'>
+              <ul>
+                <li>
+                Présentation de travaux : Met en valeur les réalisations d'un artiste, d'un photographe, d'un designer, etc.
+                </li>
+              </ul>
+              </div>
+              </li>
+
+              <li>Sites événementiels
+              <div className='service_description'>
+              <ul>
+                <li>
+                Promotion d'événements : Présente les informations pratiques (date, lieu, programme) d'un événement.
+                </li>
+              </ul>
+              </div>
+              </li>
+
             </ul>
             </div>
         </div>

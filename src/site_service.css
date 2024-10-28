@@ -44,12 +44,9 @@
 }
 
 .service-text-content {
-    /* text-align: center; */
-    /* line-height: 40px; */
-    /* margin-top: 22%; */
-    font-size: 22px;
+    font-size: 20px;
     padding: 38px;
-
+    padding-top: 5px;
 }
 
 .service-text-content li {
