@@ -441,3 +441,22 @@ justify-content: center; */
 .video-bg {
  background-color: rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width:768px){
+    /* .w3-modal-content{width:500px}.w3-modal{padding-top:50px}
+    . */
+    .bac_services {
+        flex-direction: column !important;
+    }
+
+    .service-child {
+        width: 100% !important;
+        height: 98% !important;
+        min-height: 350px !important;
+        /* background-color: azure; */
+    }
+
+    .bac_services {
+        height: auto !important;
+    }
+}
