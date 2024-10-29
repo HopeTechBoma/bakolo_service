@@ -6,6 +6,7 @@ import './nav_site.css';
 import './site_header.css';
 import './site_footer.css';
 import './site_service.css';
+import './service_pages_style.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

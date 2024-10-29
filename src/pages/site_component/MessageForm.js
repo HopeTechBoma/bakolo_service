@@ -27,7 +27,7 @@ const MessageForm = () => {
 
   return (
     <div className="message_form" id="message_form">
-      <button className="close_message_section" onClick={closeMessage}>X</button>
+      <div className="close_message_section b_helper" onClick={closeMessage}>X</div>
       <div className="message_form_content">
         <form id="message_form">
           <div>
