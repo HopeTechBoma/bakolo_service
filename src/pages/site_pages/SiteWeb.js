@@ -8,7 +8,7 @@ const SiteWeb = () => {
     <>
 
 
-<div class="section7 transition_element t2_controlh flyers_header_bg">
+<div class="section7 transition_element t2_controlh website_header_bg">
       <div class="video-bg">
         <div class="vid_text_section"><h1>  </h1>
         </div>
