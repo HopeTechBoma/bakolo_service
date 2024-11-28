@@ -63,16 +63,13 @@ const SiteFooter = () => {
                                 <h3>Lien utils</h3>
                             </div>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">portfolio</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Our Services</a></li>
-                                <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Latest News</a></li>
+                                <li><a href="#">Video shop</a></li>
+                                <li><a href="#">Carte de visite</a></li>
+                                <li><a href="#">Présentation</a></li>
+                                <li><a href="#">Flyer & Faire Part</a></li>
+                                <li><a href="#">Site web</a></li>
+                                <li><a href="#">Traitement de text</a></li>
+                              
                             </ul>
                         </div>
                     </div>
@@ -82,7 +79,7 @@ const SiteFooter = () => {
                                 <h3>S'abonner</h3>
                             </div>
                             <div class="footer-text mb-25">
-                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                                <p>Ne manque pas à s'abonner à notre newsletter, en remplissant votre email</p>
                             </div>
                             <div class="subscribe-form">
                                 <form action="#">

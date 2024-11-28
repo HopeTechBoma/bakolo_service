@@ -23,6 +23,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: #fff; */
     z-index: -1;
   }
   
@@ -47,4 +48,84 @@
     line-height: 30px;
     letter-spacing: 1.2px;
   }
+
+  .hidden_nav {
+    /* display: none !important; */
+  }
+
+  .add_item_section {
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add_item_section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .add_item_section label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .add_item_section input[type="text"],
+  .add_item_section input[type="number"],
+  .add_item_section textarea,
+  .add_item_section input[type="file"] {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .add_item_section input[type="text"]:focus,
+  .add_item_section input[type="number"]:focus,
+  .add_item_section textarea:focus,
+  .add_item_section input[type="file"]:focus {
+    border-color: #007BFF;
+  }
+  
+  .add_item_section textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .save_services {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save_services:hover {
+    background-color: #0056b3;
+  }
+  
+  .save_services:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+  }
+  
+  @media (max-width: 768px) {
+    .add_item_section {
+      padding: 1rem;
+    }
+  }
+  
   

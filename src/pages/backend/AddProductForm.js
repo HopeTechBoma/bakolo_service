@@ -27,7 +27,7 @@ const AddProductForm = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmitold = async (e) => {
         e.preventDefault();
 
         if (formData.fichier) {
@@ -62,6 +62,59 @@ const AddProductForm = () => {
         }
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        if (!formData.fichier) {
+            alert('Please upload a file.');
+            return;
+        }
+    
+        try {
+            // Show a loading message or spinner here (if needed)
+            
+            // Reference to the Firebase Storage path
+            const storageRef = ref(storage, `files/${formData.fichier.name}`);
+    
+            // Upload the file to Firebase Storage
+            await uploadBytes(storageRef, formData.fichier);
+    
+            // Get the download URL for the uploaded file
+            const fileUrl = await getDownloadURL(storageRef);
+    
+            // Add product to Firestore
+            await addDoc(collection(db, 'products'), {
+                libelle: formData.libelle,
+                description: formData.description,
+                type: formData.type,
+                prix: formData.prix,
+                fichier: fileUrl
+            });
+    
+            // Success alert
+            alert('Product added successfully');
+    
+            // Reset form data
+            setFormData({
+                libelle: '',
+                description: '',
+                type: '',
+                prix: '',
+                fichier: null
+            });
+    
+            // Reset file input element (optional)
+            document.querySelector("input[type='file']").value = "";
+        } catch (error) {
+            // Log and alert error
+            console.error('Error adding product:', error);
+            alert('An error occurred while adding the product. Please try again.');
+        } finally {
+            // Hide the loading spinner/message here (if implemented)
+        }
+    };
+    
+
     return (
        <div className='add_item_section'>
          <form onSubmit={handleSubmit}>
@@ -85,7 +138,7 @@ const AddProductForm = () => {
                 <label>Fichier:</label>
                 <input type="file" onChange={handleFileChange} required />
             </div>
-            <button type="submit">Enregistrer</button>
+            <button type="submit" className="save_services">Enregistrer</button>
         </form>
        </div>
     );
