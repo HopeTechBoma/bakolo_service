@@ -18,3 +18,11 @@
 .t2_controlh {
     margin-top: 67px;
 }
+
+.add_item_section {
+    position: relative;
+    top: 105px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}

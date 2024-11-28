@@ -63,7 +63,8 @@ const AddProductForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+       <div className='add_item_section'>
+         <form onSubmit={handleSubmit}>
             <div>
                 <label>Libelle:</label>
                 <input type="text" name="libelle" value={formData.libelle} onChange={handleChange} required />
@@ -86,6 +87,7 @@ const AddProductForm = () => {
             </div>
             <button type="submit">Enregistrer</button>
         </form>
+       </div>
     );
 };
 
