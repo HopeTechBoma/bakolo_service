@@ -33,54 +33,58 @@ const AddProductForm = () => {
 
     // Handle form submission
     const handleSubmit = async (e) => {
-        e.preventDefault();
 
-        if (!formData.fichier) {
-            alert('Please upload a file.');
-            return;
-        }
+    e.preventDefault();
 
-        try {
-            // Firebase Storage Reference
-            const storageRef = ref(storage, `files/${formData.fichier.name}`);
-            console.log('Uploading file:', formData.fichier.name);
+    if (!formData.fichier) {
+        alert('Please upload a file.');
+        return;
+    }
 
-            // Upload file to Firebase Storage
-            await uploadBytes(storageRef, formData.fichier);
-            console.log('File uploaded successfully');
+    try {
+    // Firebase Storage Reference
+    const storageRef = ref(storage, `files/${formData.fichier.name}`);
+    console.log('Uploading file:', formData.fichier.name);
 
-            // Get download URL for the file
-            const fileUrl = await getDownloadURL(storageRef);
-            console.log('File available at:', fileUrl);
+    // Upload file to Firebase Storage
+    await uploadBytes(storageRef, formData.fichier);
+    console.log('File uploaded successfully');
 
-            // Add product data to Firestore
-            await addDoc(collection(db, 'products'), {
-                libelle: formData.libelle,
-                description: formData.description,
-                type: formData.type,
-                prix: formData.prix,
-                fichier: fileUrl
-            });
-            console.log('Product added to Firestore');
+    // Get download URL for the file
+    const fileUrl = await getDownloadURL(storageRef);
+    console.log('File available at:', fileUrl);
 
-            // Success alert
-            alert('Product added successfully');
+    // Add product data to Firestore
+    await addDoc(collection(db, 'products'), {
+        libelle: formData.libelle,
+        description: formData.description,
+        type: formData.type,
+        prix: formData.prix,
+        fichier: fileUrl
+    });
+    
+    console.log('Product added to Firestore');
 
-            // Reset form data
-            setFormData({
-                libelle: '',
-                description: '',
-                type: '',
-                prix: '',
-                fichier: null
-            });
+    // Success alert
+    alert('Product added successfully');
 
-            // Reset file input
-            e.target.reset();
-        } catch (error) {
-            console.error('Error during submission:', error);
-            alert('An error occurred. Please check the console for details.');
-        }
+    // Reset form data
+    setFormData({
+        libelle: '',
+        description: '',
+        type: '',
+        prix: '',
+        fichier: null
+    });
+
+    // Reset file input
+    e.target.reset();
+
+    } catch (error) {
+        console.error('Error during submission:', error);
+        alert('An error occurred. Please check the console for details.');
+    }
+
     };
 
     return (
