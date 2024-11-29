@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storage, db } from '../../firebase';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Modular SDK functions for storage
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Modular SDK for Storage
 import { collection, addDoc } from 'firebase/firestore'; // Modular SDK for Firestore
 
 const AddProductForm = () => {
@@ -12,77 +12,48 @@ const AddProductForm = () => {
         fichier: null
     });
 
+    // Handle text input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
+        setFormData((prev) => ({
+            ...prev,
             [name]: value
-        });
+        }));
     };
 
+    // Handle file input change
     const handleFileChange = (e) => {
-        setFormData({
-            ...formData,
-            fichier: e.target.files[0]
-        });
-    };
-
-    const handleSubmitold = async (e) => {
-        e.preventDefault();
-
-        if (formData.fichier) {
-            // Reference to the Firebase Storage path
-            const storageRef = ref(storage, `files/${formData.fichier.name}`);
-
-            // Upload the file to Firebase Storage
-            await uploadBytes(storageRef, formData.fichier);
-
-            // Get the download URL for the uploaded file
-            const fileUrl = await getDownloadURL(storageRef);
-
-            // Add product to Firestore
-            await addDoc(collection(db, 'products'), {
-                libelle: formData.libelle,
-                description: formData.description,
-                type: formData.type,
-                prix: formData.prix,
-                fichier: fileUrl
-            });
-
-            alert('Product added successfully');
-            setFormData({
-                libelle: '',
-                description: '',
-                type: '',
-                prix: '',
-                fichier: null
-            });
-        } else {
-            alert('Please upload a file.');
+        if (e.target.files[0]) {
+            setFormData((prev) => ({
+                ...prev,
+                fichier: e.target.files[0]
+            }));
         }
     };
 
+    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         if (!formData.fichier) {
             alert('Please upload a file.');
             return;
         }
-    
+
         try {
-            // Show a loading message or spinner here (if needed)
-            
-            // Reference to the Firebase Storage path
+            // Firebase Storage Reference
             const storageRef = ref(storage, `files/${formData.fichier.name}`);
-    
-            // Upload the file to Firebase Storage
+            console.log('Uploading file:', formData.fichier.name);
+
+            // Upload file to Firebase Storage
             await uploadBytes(storageRef, formData.fichier);
-    
-            // Get the download URL for the uploaded file
+            console.log('File uploaded successfully');
+
+            // Get download URL for the file
             const fileUrl = await getDownloadURL(storageRef);
-    
-            // Add product to Firestore
+            console.log('File available at:', fileUrl);
+
+            // Add product data to Firestore
             await addDoc(collection(db, 'products'), {
                 libelle: formData.libelle,
                 description: formData.description,
@@ -90,10 +61,11 @@ const AddProductForm = () => {
                 prix: formData.prix,
                 fichier: fileUrl
             });
-    
+            console.log('Product added to Firestore');
+
             // Success alert
             alert('Product added successfully');
-    
+
             // Reset form data
             setFormData({
                 libelle: '',
@@ -102,45 +74,70 @@ const AddProductForm = () => {
                 prix: '',
                 fichier: null
             });
-    
-            // Reset file input element (optional)
-            document.querySelector("input[type='file']").value = "";
+
+            // Reset file input
+            e.target.reset();
         } catch (error) {
-            // Log and alert error
-            console.error('Error adding product:', error);
-            alert('An error occurred while adding the product. Please try again.');
-        } finally {
-            // Hide the loading spinner/message here (if implemented)
+            console.error('Error during submission:', error);
+            alert('An error occurred. Please check the console for details.');
         }
     };
-    
 
     return (
-       <div className='add_item_section'>
-         <form onSubmit={handleSubmit}>
-            <div>
-                <label>Libelle:</label>
-                <input type="text" name="libelle" value={formData.libelle} onChange={handleChange} required />
-            </div>
-            <div>
-                <label>Description:</label>
-                <textarea name="description" value={formData.description} onChange={handleChange} required />
-            </div>
-            <div>
-                <label>Type:</label>
-                <input type="text" name="type" value={formData.type} onChange={handleChange} required />
-            </div>
-            <div>
-                <label>Prix:</label>
-                <input type="number" name="prix" value={formData.prix} onChange={handleChange} required />
-            </div>
-            <div>
-                <label>Fichier:</label>
-                <input type="file" onChange={handleFileChange} required />
-            </div>
-            <button type="submit" className="save_services">Enregistrer</button>
-        </form>
-       </div>
+        <div className='add_item_section'>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Libelle:</label>
+                    <input
+                        type="text"
+                        name="libelle"
+                        value={formData.libelle}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Description:</label>
+                    <textarea
+                        name="description"
+                        value={formData.description}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Type:</label>
+                    <input
+                        type="text"
+                        name="type"
+                        value={formData.type}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Prix:</label>
+                    <input
+                        type="number"
+                        name="prix"
+                        value={formData.prix}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Fichier:</label>
+                    <input
+                        type="file"
+                        onChange={handleFileChange}
+                        required
+                    />
+                </div>
+                <button type="submit" className="save_services">
+                    Enregistrer
+                </button>
+            </form>
+        </div>
     );
 };
 

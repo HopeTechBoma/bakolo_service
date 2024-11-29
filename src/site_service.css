@@ -441,7 +441,7 @@ justify-content: center; */
 }
 
 .hidden_menu_icon {
-    display: none;
+    /* display: none; */
 }
 
 @media (max-width:768px){
