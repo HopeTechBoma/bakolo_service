@@ -32,8 +32,7 @@ const AddProductForm = () => {
     };
 
     // Handle form submission
-    const handleSubmit = async (e) => {
-
+const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.fichier) {
@@ -42,50 +41,57 @@ const AddProductForm = () => {
     }
 
     try {
-    // Firebase Storage Reference
-    const storageRef = ref(storage, `files/${formData.fichier.name}`);
-    console.log('Uploading file:', formData.fichier.name);
+        // Firebase Storage Reference (specify the bucket explicitly)
+        const bucketName = 'bakolo.firebasestorage.app'; // Your Firebase bucket name
+        const storageRef = ref(storage, `gs://${bucketName}/files/${formData.fichier.name}`);
+        console.log('Uploading file:', formData.fichier.name);
 
-    // Upload file to Firebase Storage
-    await uploadBytes(storageRef, formData.fichier);
-    console.log('File uploaded successfully');
+        // Upload file to Firebase Storage
+        await uploadBytes(storageRef, formData.fichier);
+        console.log('File uploaded successfully');
 
-    // Get download URL for the file
-    const fileUrl = await getDownloadURL(storageRef);
-    console.log('File available at:', fileUrl);
+        // Get download URL for the file
+        const fileUrl = await getDownloadURL(storageRef);
+        console.log('File available at:', fileUrl);
 
-    // Add product data to Firestore
-    await addDoc(collection(db, 'products'), {
-        libelle: formData.libelle,
-        description: formData.description,
-        type: formData.type,
-        prix: formData.prix,
-        fichier: fileUrl
-    });
-    
-    console.log('Product added to Firestore');
+        // Add product data to Firestore
+        await addDoc(collection(db, 'products'), {
+            libelle: formData.libelle,
+            description: formData.description,
+            type: formData.type,
+            prix: formData.prix,
+            fichier: fileUrl // Save the download URL in Firestore
+        });
 
-    // Success alert
-    alert('Product added successfully');
+        console.log('Product added to Firestore');
 
-    // Reset form data
-    setFormData({
-        libelle: '',
-        description: '',
-        type: '',
-        prix: '',
-        fichier: null
-    });
+        // Success alert
+        alert('Product added successfully');
 
-    // Reset file input
-    e.target.reset();
+        // Reset form data
+        setFormData({
+            libelle: '',
+            description: '',
+            type: '',
+            prix: '',
+            fichier: null
+        });
+
+        // Reset file input
+        e.target.reset();
 
     } catch (error) {
         console.error('Error during submission:', error);
-        alert('An error occurred. Please check the console for details.');
-    }
 
-    };
+        // Handle CORS issues explicitly
+        if (error.code === 'storage/unauthorized') {
+            alert('CORS policy is blocking this action. Please configure the bucket CORS settings.');
+        } else {
+            alert('An error occurred. Please check the console for details.');
+        }
+    }
+};
+
 
     return (
         <div className='add_item_section'>
