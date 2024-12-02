@@ -4,6 +4,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Modular 
 import { collection, addDoc } from 'firebase/firestore'; // Modular SDK for Firestore
 
 const AddProductForm = () => {
+    
     const [formData, setFormData] = useState({
         libelle: '',
         description: '',
